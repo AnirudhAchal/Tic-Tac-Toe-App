@@ -15,7 +15,9 @@ class ResultPage extends StatelessWidget {
       body: Center(
         child: Container(
           child: Text(
-            'Player ${this.winner} Wins!!',
+            this.winner == '0'
+                ? 'It\'s a draw!!'
+                : 'Player ${this.winner} Wins!!',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 40.0,
