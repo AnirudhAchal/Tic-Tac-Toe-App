@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/user_vs_computer_home_page.dart';
-import 'user_vs_user.dart';
+import 'user_vs_computer_page.dart';
 
-class HomePage extends StatelessWidget {
+class UserVsComputerHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+        ),
         backgroundColor: Colors.blue[500],
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -15,7 +17,7 @@ class HomePage extends StatelessWidget {
               flex: 5,
               child: Center(
                 child: Text(
-                  'Tic Tac Toe',
+                  'Pick Player 1',
                   style: TextStyle(
                     fontSize: 50,
                     fontWeight: FontWeight.bold,
@@ -36,12 +38,15 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => UserVsUserPage(),
+                        builder: (context) => UserVsComputerPage(
+                          computerPlayerNumber: 1,
+                          userPlayerNumber: 2,
+                        ),
                       ),
                     );
                   },
                   child: Text(
-                    'User Vs User',
+                    'Computer',
                     style: TextStyle(
                       fontSize: 30.0,
                       color: Colors.white,
@@ -64,12 +69,15 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => UserVsComputerHomePage(),
+                        builder: (context) => UserVsComputerPage(
+                          computerPlayerNumber: 2,
+                          userPlayerNumber: 1,
+                        ),
                       ),
                     );
                   },
                   child: Text(
-                    'User Vs Computer',
+                    'User',
                     style: TextStyle(
                       fontSize: 30.0,
                       color: Colors.white,
