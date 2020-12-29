@@ -9,7 +9,7 @@ class UserVsComputerHomePage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.black,
         ),
-        backgroundColor: Colors.blue[500],
+        backgroundColor: Colors.white,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
